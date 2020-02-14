@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Demo Cite Service</title>
+   <meta charset="utf-8" />
+   <link href="app.css" rel="stylesheet" type="text/css">
+   <script src="cors.js"></script>
+   <script src="cite.js"></script>
+</head>
+
+<body>
+   <p>This page is a simple demonstration of The Environmental Data Initiative's <a
+         href="https://github.com/PASTAplus/cite" rel="noopener">Cite service</a> for retrieving
+      citation information from archived data packages.</p>
+   <p>Enter one or more package IDs from the EDI data portal in the box below.
+      Click the <strong>Retrieve Citations</strong> button to fetch citations for
+      those packages.</p>
+   <p>Check your <a
+         href="https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers"
+         rel="noopener">JavaScript console</a> to see the Cite URIs we called and the
+      object we assembled from what came back. Note that our requests include a
+      header that asks for JSON, whereas the URIs in the console will just return
+      the default HTML response.</p>
+   <p>We only utilize a portion of what Cite can do. See the <a href="https://github.com/PASTAplus/cite"
+         rel="noopener">Cite project</a> for Cite's full capabilities.</p>
+
+   <label for="packageIdList">Package IDs (one per line)</label><br>
+   <textarea id="packageIdList" rows="4" cols="50">
+knb-lter-ble.1.6
+knb-lter-ble.2.3
+knb-lter-ble.5.2</textarea><br>
+   <!-- <textarea id="packageIdList" rows="4" cols="50">knb-lter-ble.5.2</textarea><br> -->
+
+   <button type="button" onclick="handleInputs()">Retrieve Citations</button>
+
+   <div id="results"></div>
+</body>
+
+</html>
