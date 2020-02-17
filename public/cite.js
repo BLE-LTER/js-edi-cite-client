@@ -44,7 +44,7 @@ function getCitations(packageIds) {
          (function (index) { // enable the callback to know which package this is
             return function (headers, response) {
                var citation = JSON.parse(response);
-               citation["pid"] = packageIds[index]
+               citation["pid"] = packageIds[index];
                citations[index] = citation;
 
                --callsRemaining;
